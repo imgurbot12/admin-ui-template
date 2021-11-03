@@ -1,0 +1,72 @@
+doctype html
+
+block config
+    - var pageTitle = "Page Title"
+
+html(lang='en')
+
+  head
+
+    // meta information
+    include includes/head/meta.pug
+    // title
+    title #{pageTitle} - Admin UI
+    // css
+    block css
+
+  body
+
+    nav.navbar.navbar-expand.navbar-light.bg-light
+      .container-fluid
+        a.navbar-brand Admin-UI
+        ul.navbar-nav
+          // navbar search
+          li.nav-item
+            form.d-none.d-md-flex
+              input(type="search" placeholder="Search" aria-label="Search").form-control.me-2
+              button(type="submit").btn.btn-outline-success Search
+          // navbar user-dropdown
+          li.nav-item.dropdown
+            a(href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true").nav-link.dropdown-toggle User
+            ul(aria-labelledby="userDropdown").dropdown-menu.dropdown-menu-end
+              li
+                a.dropdown-item Action 1
+                a.dropdown-item Action 2
+                a.dropdown-item Action 3
+          // navbar sidebar toggle
+          li.nav-item
+            button.btn.btn-sm.mt-1#sidebarToggle T
+              i.nav-logo.fa.fa-bars
+    
+    #content.d-flex.flex-nowrap
+      // sidebar definition
+      .sidebar.bg-light
+        ul.nav.nav-pills.nav-flush.flex-column.mb-auto
+          li.nav-item.dropdown.dropend.hover.border-bottom
+            a(href="#" id="dropdownProduct" data-bs-toggle="dropdown" aria-expanded="false").nav-link.dropdown-toggle
+              i.nav-logo.bi.bi-list-columns
+              span.nav-text SubMenu
+                .anim-slide-end
+            ul(aria-labelledby="dropdownProduct").dropdown-menu
+              li
+                a.dropdown-item Menu 1
+                a.dropdown-item Menu 2
+                hr.dropdown-divider
+                a.dropdown-item Break
+          li.nav-item.border-bottom
+            a(href="#").nav-link
+              i.nav-logo.bi.bi-link
+              span.nav-text Link
+                .anim-slide-end
+          // sidebar collapse button
+          li.nav-item.border-bottom
+            a(href="#").nav-link#sidebarCollapse
+              i.nav-logo.bi.bi-arrow-left-circle-fill
+              span.nav-text Collapse
+                .anim-slide-end
+            
+      .page-content.container-fluid.flex-column.p-2
+      
+        block content
+    
+    block scripts

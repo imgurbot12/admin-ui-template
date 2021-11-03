@@ -1,0 +1,13 @@
+/*
+  Default Dashboard Layout CSS
+*/
+
+#content {
+  margin: 0;
+  height: 100%;
+}
+
+.page-content {
+  margin-left: 0px;
+  transition:  margin $sidebar-anim-time;
+}
