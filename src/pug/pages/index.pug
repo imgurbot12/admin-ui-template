@@ -1,8 +1,41 @@
 extends ../layouts/dashboard.pug
 
+mixin col(sizeMd, sizeSm)
+  div(class="col-md-" + sizeMd + " col-sm-" + sizeSm)
+    .panel.panel-primary
+      .panel-heading
+        h5.panel-title Panel Title
+      .panel-body Panel Body
+
+mixin table(sizeMd, sizeSm, rows)
+  div(class="col-md-" + sizeMd + " col-sm-" + sizeSm)
+    .panel.panel-secondary
+      .panel-heading
+        h5.panel-title Panel Title
+      table.table.table-stripped
+        tbody
+          each val, name in rows
+            tr
+              td
+                strong=name
+              td=val
+    
+
 block config
     - var pageTitle = 'Dashboard';
 
 block content
 
-  h3 Hello World!
+  .row
+    +col(12, 12)
+        
+  .row
+    +col(6, 12)
+    +col(6, 12)
+    
+  .row
+    +table(4, 12, {"a": 1, "b": 2, "c": 3})
+    +table(4, 12, {"d": 3, "e": 4, "f": 5})
+    +table(4, 12, {"g": 6, "h": 7, "i": 8})
+        
+    

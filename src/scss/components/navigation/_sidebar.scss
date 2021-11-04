@@ -9,7 +9,7 @@
 
   // cosmetic changes
   .nav-item {
-    width: 100%;
+    width:   100%;
   }
   .nav-logo {
     font-size:  $sidebar-font-size;
@@ -54,7 +54,6 @@
       width:      0%;
       background: white;
       animation:  anim-slide-end $sidebar-anim-time ease-in-out;
-      z-index:    1;
     }
   }
 }

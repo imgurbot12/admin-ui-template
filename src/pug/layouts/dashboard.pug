@@ -18,25 +18,31 @@ html(lang='en')
 
     nav.navbar.navbar-expand.navbar-light.bg-light
       .container-fluid
-        a.navbar-brand Admin-UI
+        a.navbar-brand
+          i.bi.bi-git
+          | Admin-UI
         ul.navbar-nav
           // navbar search
           li.nav-item
             form.d-none.d-md-flex
-              input(type="search" placeholder="Search" aria-label="Search").form-control.me-2
-              button(type="submit").btn.btn-outline-success Search
+              input(type="search" placeholder="Search" aria-label="Search").form-control
+              button(type="submit").btn.btn-primary
+                i.bi.bi-search
           // navbar user-dropdown
           li.nav-item.dropdown
-            a(href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true").nav-link.dropdown-toggle User
+            a(href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true").nav-link.dropdown-toggle
+              i.bi.bi-person-fill
             ul(aria-labelledby="userDropdown").dropdown-menu.dropdown-menu-end
               li
                 a.dropdown-item Action 1
+              li
                 a.dropdown-item Action 2
+              li
                 a.dropdown-item Action 3
           // navbar sidebar toggle
           li.nav-item
-            button.btn.btn-sm.mt-1#sidebarToggle T
-              i.nav-logo.fa.fa-bars
+            button.btn#sidebarToggle
+              i.nav-logo.bi.bi-justify
     
     #content.d-flex.flex-nowrap
       // sidebar definition
@@ -50,8 +56,11 @@ html(lang='en')
             ul(aria-labelledby="dropdownProduct").dropdown-menu
               li
                 a.dropdown-item Menu 1
+              li
                 a.dropdown-item Menu 2
+              li
                 hr.dropdown-divider
+              li
                 a.dropdown-item Break
           li.nav-item.border-bottom
             a(href="#").nav-link

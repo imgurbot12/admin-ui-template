@@ -2,7 +2,14 @@
   Custom Configuration/Settings for CSS
 */
 
+@import "~bootstrap/scss/functions.scss";
+@import "~bootstrap/scss/variables";
+
 $fonts-folder: "../fonts";
+
+/* Panel General Configuration */
+
+
 
 /* Sidebar General Configuration */
 
@@ -13,5 +20,5 @@ $sidebar-font-size: 15px;
 $sidebar-font-entry-size: 15px;
 $sidebar-collapse-font-size: 20px;
 
-$sidebar-color: #546474;
+$sidebar-color: $primary;
 $sidebar-anim-time: 0.30s;

@@ -1,0 +1,37 @@
+/*
+  Panel Widget for Content
+*/
+
+.panel {
+  margin-bottom: 0.5rem;
+
+  .panel-heading {
+    font-size: 3rem;
+    padding:   0.2rem 0.5rem;
+    h3, h5 {
+      margin-bottom: 0;
+    }
+  }
+
+  .panel-body {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+.panel-primary {
+  border: 1px lightgrey solid;
+
+  .panel-heading {
+    color:            white;
+    background-color: lightblue;
+  }
+}
+
+.panel-secondary {
+  border: 1px lightgrey solid;
+
+  .panel-heading {
+    color: white;
+    background-color: grey;
+  }
+}
