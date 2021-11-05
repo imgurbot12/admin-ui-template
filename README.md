@@ -2,8 +2,8 @@ admin-ui
 ---
 a relatively simple html/js/css template for building pretty admin panels
 
-## Requires
-1. npm/node v14.18.1
+### Requires
+  - npm/node v14.18.1
 
 ### Build
 ```bash
