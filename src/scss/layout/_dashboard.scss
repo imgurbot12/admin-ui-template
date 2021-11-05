@@ -2,17 +2,31 @@
   Default Dashboard Layout CSS
 */
 
-#content {
-  margin: 0;
+#content-wrapper {
   height: 100%;
+  display: flex;
+
+  margin: 0;
+  margin-top: var(--navbar-margin-top);
+
+  #sidebar {
+    top:  var(--navbar-margin-top);
+    left: 0;
+    position: fixed;
+
+    &.sidebar-collapse ~ #content {
+      margin-left: var(--sidebar-collapse-width);
+    }
+  }
+
+  #content {
+    top:         var(--navbar-margin-top);
+    margin-left: var(--sidebar-width);
+    transition:  margin $sidebar-anim-time;
+    z-index:     1;
+  }
 }
 
 #sidebarToggle {
   padding: 0;
-}
-
-.page-content {
-  margin-left: 0px;
-  transition:  margin $sidebar-anim-time;
-  z-index:     1;
 }

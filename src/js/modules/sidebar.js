@@ -35,10 +35,7 @@ function initSidebarToggleButton() {
       const content = document.querySelector('.page-content');
       // toggle margin-left of content to match width of sidebar
       sidebar.classList.toggle('sidebar-hide');
-      content.style.marginLeft =
-        (content.style.marginLeft == '' || content.style.marginLeft == '0px')
-          ? `-${sidebar.clientWidth}px`
-          : '0px';
+      content.style.marginLeft = content.style.marginLeft == '' ? `0px` : '';
     });
   }
 }

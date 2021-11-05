@@ -13,10 +13,12 @@ $fonts-folder: "../fonts";
 
 /* Panel General Configuration */
 
-/* Sidebar General Configuration */
+/* Navigation General Configuration */
 
-$sidebar-width: 8rem;
-$sidebar-collapse-width: 3rem;
+$navbar-margin-top: 60px;
+
+$sidebar-width: 15rem;
+$sidebar-collapse-width: 3.5rem;
 
 $sidebar-font-size: 15px;
 $sidebar-font-entry-size: 15px;
@@ -24,3 +26,11 @@ $sidebar-collapse-font-size: 20px;
 
 $sidebar-color: lightblue;
 $sidebar-anim-time: 0.30s;
+
+/* CSS Accessible Variables */
+
+:root {
+  --navbar-margin-top:      #{$navbar-margin-top};
+  --sidebar-width:          #{$sidebar-width};
+  --sidebar-collapse-width: #{$sidebar-collapse-width};
+}

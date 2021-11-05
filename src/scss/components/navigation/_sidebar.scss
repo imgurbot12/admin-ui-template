@@ -3,14 +3,11 @@
 */
 
 .sidebar {
-  width:      $sidebar-width;
-  height:     100%;
+  width:  var(--sidebar-width);
+  height: 100%;
   transition: all $sidebar-anim-time ease-in-out;
 
   // cosmetic changes
-  .nav-item {
-    width:   100%;
-  }
   .nav-logo {
     font-size:  $sidebar-font-size;
     transition: all $sidebar-anim-time ease-out;
@@ -31,18 +28,18 @@
     }
   }
 
-   // overrides default settings for bootstrap navigation-link
+  // overrides default settings for bootstrap navigation-link
   .nav-link {
-    display: flex;
+    width:       100%;
+    display:     flex;
     align-items: center;
   }
-
   // configuration for text included in navigation items
   .nav-text {
     font-size:   $sidebar-font-entry-size;
     position:    relative;
     margin-left: 5px;
-    transition:  font-size 0.15s ease-out;
+    white-space: nowrap;
 
     // sidebar implementation for slide-in animation (needs background color)
     .anim-slide-end {
@@ -51,22 +48,20 @@
       bottom:     0;
       right:      0;
       width:      0%;
-      background: white;
-      animation:  anim-slide-end $sidebar-anim-time ease-in-out;
+      animation:  anim-slide-width $sidebar-anim-time ease-in-out;
     }
   }
 }
 
 // completley hide sidebar (used w/ js toggle button)
 .sidebar-hide {
-  transform:  translateX(-1 * $sidebar-width);
-  transition: transform $sidebar-anim-time;
+  transform:  translateX(-100%);
+  transition: all $sidebar-anim-time;
 }
 
 // collapse sidebar to display only icons
 .sidebar-collapse {
-  width:      $sidebar-collapse-width;
-  transition: width $sidebar-anim-time ease-in-out infinite;
+  width: var(--sidebar-collapse-width);
 
   // transition font-size w/ nice animation for smoother open/close
   .nav-logo {
@@ -82,10 +77,4 @@
   .nav-text {
     display: none;
   }
-}
-
-/* Color Settings */
-
-.sidebar-light {
-
 }
