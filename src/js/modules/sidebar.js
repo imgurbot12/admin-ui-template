@@ -1,5 +1,5 @@
 /*
-  custom sidebar javascript help-functions
+  Custom Sidebar javascript help-functions
 */
 
 /* Functions */
@@ -16,7 +16,7 @@ function initSidebarDropdowns() {
         if (!menu.matches(':hover')) {
           dropdown.hide();
         }
-      }, 250);
+      }, 300);
     };
     e.addEventListener("mouseover", () => { dropdown.show() });
     e.addEventListener("mouseout",  mouseout);

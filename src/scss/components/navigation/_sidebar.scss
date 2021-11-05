@@ -33,7 +33,6 @@
 
    // overrides default settings for bootstrap navigation-link
   .nav-link {
-    color: $sidebar-color;
     display: flex;
     align-items: center;
   }
@@ -83,4 +82,10 @@
   .nav-text {
     display: none;
   }
+}
+
+/* Color Settings */
+
+.sidebar-light {
+
 }

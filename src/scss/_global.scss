@@ -7,3 +7,25 @@ body {
     margin: 0;
     height: 100%;
 }
+
+// add animation to collapsible menus
+.btn[data-bs-toggle="collapse"] {
+  padding: 0;
+
+  // remove outline around button on hover/focus
+  &.hover {
+    color: none;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+
+  // add transition/transformation to/from collapsed state
+  &.collapsed {
+    transition: all 0.3s;
+  }
+  &[aria-expanded="true"] {
+    transition: all 0.3s;
+    transform:  rotate(180deg);
+  }
+}

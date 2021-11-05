@@ -3,35 +3,51 @@
 */
 
 .panel {
+  border-radius: $border-radius;
   margin-bottom: 0.5rem;
+  word-wrap:     break-word;
 
   .panel-heading {
-    font-size: 3rem;
-    padding:   0.2rem 0.5rem;
-    h3, h5 {
+    border-bottom: none;
+    border-radius: $border-radius $border-radius 0 0;
+
+    display: flex;
+    padding: 0.2rem 0.5rem;
+
+    .panel-title {
       margin-bottom: 0;
+    }
+
+    .panel-buttons {
+      margin-left: auto;
+    }
+
+    ~ .panel-body {
+      border-top:    none;
+      border-radius: 0 0 $border-radius $border-radius;
     }
   }
 
   .panel-body {
-    padding: 0.5rem 0.5rem;
+    padding:       0.5rem 0.5rem;
+    min-height:    1px;
+    border:        1px $table-border-color solid;
+    border-radius: $border-radius;
   }
 }
 
 .panel-primary {
-  border: 1px lightgrey solid;
 
   .panel-heading {
-    color:            white;
-    background-color: lightblue;
+    color: color-contrast($secondary);
+    background-color: $secondary;
   }
 }
 
 .panel-secondary {
-  border: 1px lightgrey solid;
 
   .panel-heading {
-    color: white;
-    background-color: grey;
+    color: color-contrast($primary);
+    background-color: $primary;
   }
 }

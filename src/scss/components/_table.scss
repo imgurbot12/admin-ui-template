@@ -2,6 +2,22 @@
  Table Widget Customization
 */
 
+// Simple Datatables CSS
+@import "~simple-datatables/dist/style.css";
+
+/* CSS */
+
 .table-stripped {
   margin: 0;
+}
+
+.table-responsive {
+  display:    block;
+  width:      100%;
+  overflow-x: auto;
+}
+
+.pagination {
+  margin: 0.5rem 0 0.75rem;
+  align-items: center;
 }
