@@ -20,10 +20,8 @@
   }
 
   #content {
-    top:         var(--navbar-margin-top);
     margin-left: var(--sidebar-width);
     transition:  margin $sidebar-anim-time;
-    z-index:     1;
   }
 }
 
