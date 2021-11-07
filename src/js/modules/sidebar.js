@@ -6,19 +6,32 @@
 
 // intialize hover events for sidebar dropdowns
 function initSidebarDropdowns() {
+  // track list of all dropdowns modified
+  const allDropdowns = [];
+  // iterate all hover dropdowns to add event handlers for
   document.querySelectorAll('.dropend.hover .dropdown-toggle').forEach(e => {
     const menu     = e.parentNode.querySelector('.dropdown-menu');
     const dropdown = window.bootstrap.Dropdown.getOrCreateInstance(e);
-    // dropdown button will toggle on hover of self
+    allDropdowns.push(dropdown);
+    //func: close dropdown if menu is not being hovered over (after a wait)
     const mouseout = () => {
-      // close dropdown if menu is not being hovered over (after a wait)
       setTimeout(() => {
         if (!menu.matches(':hover')) {
           dropdown.hide();
         }
       }, 300);
     };
-    e.addEventListener("mouseover", () => { dropdown.show() });
+    //func: close all other hover dropdowns and open the one being hovered over
+    const mouseover = () => {
+      for (const d of allDropdowns) {
+        if (d !== dropdown) {
+          d.hide();
+        }
+      }
+      dropdown.show();
+    };
+    // add events for each function assigned
+    e.addEventListener("mouseover", mouseover);
     e.addEventListener("mouseout",  mouseout);
     menu.addEventListener("mouseout", mouseout);
   });

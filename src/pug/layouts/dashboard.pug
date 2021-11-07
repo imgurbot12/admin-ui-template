@@ -48,20 +48,21 @@ html(lang='en')
       // sidebar definition
       #sidebar.sidebar.bg-light
         ul.nav.nav-pills.nav-flush.flex-column.mb-auto
-          li.nav-item.dropdown.dropend.hover.border-bottom
-            a(href="#" id="dropdownProduct" data-bs-toggle="dropdown" aria-expanded="false").nav-link.dropdown-toggle
-              i.nav-logo.bi.bi-list-columns
-              span.nav-text SubMenu
-                .anim-slide-end.bg-light
-            ul(aria-labelledby="dropdownProduct").dropdown-menu
-              li
-                a.dropdown-item Menu 1
-              li
-                a.dropdown-item Menu 2
-              li
-                hr.dropdown-divider
-              li
-                a.dropdown-item Break
+          for menu in [1, 2]
+            li.nav-item.dropdown.dropend.hover.border-bottom
+              a(href="#" id="dropdownProduct" data-bs-toggle="dropdown" aria-expanded="false").nav-link.dropdown-toggle
+                i.nav-logo.bi.bi-list-columns
+                span.nav-text SubMenu #{menu}
+                  .anim-slide-end.bg-light
+              ul(aria-labelledby="dropdownProduct").dropdown-menu
+                li
+                  a.dropdown-item Menu 1
+                li
+                  a.dropdown-item Menu 2
+                li
+                  hr.dropdown-divider
+                li
+                  a.dropdown-item Break
           li.nav-item.border-bottom
             a(href="#").nav-link
               i.nav-logo.bi.bi-link

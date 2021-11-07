@@ -10,7 +10,6 @@ function initDataTables() {
         paging:     e.hasAttribute('page'),
         searchable: e.hasAttribute('search'),
     });
-    console.log(dataTable);
   });
 }
 
