@@ -7,6 +7,22 @@ mixin col(sizeMd, sizeSm)
         h5.panel-title Panel Title
       .panel-body Panel Body
 
+mixin panel(cls, logo, num, text, footer)
+  .col-lg-3.col-md-6
+    div(class="panel " + cls).border
+      .panel-heading
+        .row
+          .col-3
+            i(class="bi "+logo, style="font-size: 80px;")
+          .col-9.text-end
+            div(style="font-size: 40px;")=num
+            div=text
+      a(href='#')
+        .panel-footer
+          span=footer
+          span.pull-end
+            i.bi.bi-arrow-right-circle-fill
+
 mixin table(sizeMd, sizeSm, rows)
   div(class="col-md-" + sizeMd + " col-sm-" + sizeSm)
     .panel.panel-secondary
@@ -30,8 +46,10 @@ block content
     +col(12, 12)
         
   .row
-    +col(6, 12)
-    +col(6, 12)
+    +panel("panel-secondary", "bi-bullseye", 1000, "Active Products", "View Products")
+    +panel("panel-red", "bi-bug", 5996, "Opened in Last 7 Days", "View Finding Details")
+    +panel("panel-green", "bi-bricks", 0, "Closed in Last 7 Days", "View Finding Details")
+    +panel("panel-yellow", "bi-check-lg", 0, "Risk Accepted in Last 7 Days", "View Finding Details")
     
   .row
     +table(4, 12, {"a": 1, "b": 2, "c": 3})
@@ -39,7 +57,7 @@ block content
     // collapse demonstration
     .col-md-4.col-sm-12
       .panel.panel-primary
-        .panel-heading
+        .panel-heading.d-flex
           h5.panel-title Collapse Pannel
           .panel-buttons
             a(data-bs-toggle="collapse" href="#example" role="button" aria-expanded="false" aria-controls="example").btn

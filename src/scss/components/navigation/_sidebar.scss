@@ -3,9 +3,10 @@
 */
 
 .sidebar {
-  width:  var(--sidebar-width);
-  height: 100%;
+  width:      var(--sidebar-width);
+  height:     100%;
   transition: all $sidebar-anim-time ease-in-out;
+  z-index:    3;
 
   // cosmetic changes
   .nav-logo {

@@ -11,7 +11,6 @@
     border-bottom: none;
     border-radius: $border-radius $border-radius 0 0;
 
-    display: flex;
     padding: 0.2rem 0.5rem;
 
     .panel-title {
@@ -34,20 +33,32 @@
     border:        1px $table-border-color solid;
     border-radius: $border-radius;
   }
-}
 
-.panel-primary {
-
-  .panel-heading {
-    color: color-contrast($secondary);
-    background-color: $secondary;
+  .panel-footer {
+    padding: 0.2rem 0.5rem;
   }
 }
 
-.panel-secondary {
+/* Color Settings */
 
-  .panel-heading {
-    color: color-contrast($primary);
-    background-color: $primary;
+$panelThemes: (
+  "primary":   $secondary,
+  "secondary": $primary,
+  "red":       $red,
+  "green":     $green,
+  "yellow":    $yellow,
+);
+
+@each $theme, $hexColor in $panelThemes {
+  .panel-#{$theme} {
+
+    .panel-heading {
+      color: color-contrast($hexColor);
+      background-color: $hexColor;
+    }
+
+    a {
+      color: $hexColor;
+    }
   }
 }
