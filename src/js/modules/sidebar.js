@@ -16,7 +16,7 @@ function initSidebarDropdowns() {
     //func: close dropdown if menu is not being hovered over (after a wait)
     const mouseout = () => {
       setTimeout(() => {
-        if (!menu.matches(':hover')) {
+        if (!e.matches(':hover') && !menu.matches(':hover')) {
           dropdown.hide();
         }
       }, 300);
