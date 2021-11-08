@@ -57,8 +57,13 @@ $panelThemes: (
       background-color: $hexColor;
     }
 
-    a {
-      color: $hexColor;
+    // only include anchor coloring if not primary/secondary
+    @if $theme != "primary" {
+      @if $theme != "secondary" {
+        a {
+          color: $hexColor;
+        }
+      }
     }
   }
 }
