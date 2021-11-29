@@ -45,8 +45,10 @@ $panelThemes: (
   "primary":   $secondary,
   "secondary": $primary,
   "red":       $red,
-  "green":     $green,
+  "orange":    $orange,
   "yellow":    $yellow,
+  "green":     $green,
+  "blue":      $blue,
 );
 
 @each $theme, $hexColor in $panelThemes {
