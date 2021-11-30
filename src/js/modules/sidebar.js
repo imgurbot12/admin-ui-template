@@ -2,6 +2,11 @@
   Custom Sidebar javascript help-functions
 */
 
+/* Variables */
+
+const HIDE     = "sidebar-hide"
+const COLLAPSE = "sidebar-collapse"
+
 /* Functions */
 
 // intialize hover events for sidebar dropdowns
@@ -38,8 +43,7 @@ function initSidebarDropdowns() {
 }
 
 // intialize sidebar toggle button (if it exists)
-function initSidebarToggleButton() {
-  const toggle = document.getElementById("sidebarToggle");
+function initSidebarToggleButton(toggle) {
   if (toggle) {
     toggle.addEventListener('click', event => {
       event.preventDefault();
@@ -47,20 +51,22 @@ function initSidebarToggleButton() {
       const sidebar = document.querySelector('.sidebar');
       const content = document.querySelector('.page-content');
       // toggle margin-left of content to match width of sidebar
-      sidebar.classList.toggle('sidebar-hide');
+      sidebar.classList.toggle(HIDE);
       content.style.marginLeft = content.style.marginLeft == '' ? `0px` : '';
+      window.CookieJar.set(HIDE, sidebar.classList.contains(HIDE));
     });
   }
 }
 
 // initialize sidebar collapse button (if it exists)
-function initSidebarCollapseButton() {
-  const collapse = document.getElementById('sidebarCollapse');
+function initSidebarCollapseButton(collapse) {
   if (collapse) {
     collapse.addEventListener('click', event => {
       event.preventDefault();
       // find sidebar and toggle collapse class
-      document.querySelector('.sidebar').classList.toggle('sidebar-collapse');
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle(COLLAPSE);
+      window.CookieJar.set(COLLAPSE, sidebar.classList.contains(COLLAPSE));
     });
   }
 }
@@ -69,7 +75,30 @@ function initSidebarCollapseButton() {
 /* Init */
 
 window.addEventListener('DOMContentLoaded', () => {
+  // retrieve toggle/collapse elemenets
+  const toggle   = document.getElementById("sidebarToggle");
+  const collapse = document.getElementById('sidebarCollapse');
+  // add event handlers to either
   initSidebarDropdowns();
-  initSidebarToggleButton();
-  initSidebarCollapseButton();
+  initSidebarToggleButton(toggle);
+  initSidebarCollapseButton(collapse);
+  // add JS support for cookies
+  if (window.CookieJar.get(HIDE) || window.CookieJar.get(COLLAPSE)) {
+    // get sidebar/page-content objects to disable transitions
+    const sidebar  = document.querySelector('.sidebar');
+    const content  = document.querySelector('.page-content');
+    sidebar.classList.add('notransition');
+    content.classList.add('notransition');
+    // handle relevant clicks if not already toggled
+    if (window.CookieJar.bool(COLLAPSE) && !sidebar.classList.contains(COLLAPSE)) {
+      collapse.click();
+    }
+    if (window.CookieJar.bool(HIDE) && !sidebar.classList.contains(HIDE)) {
+      toggle.click();
+    }
+    setTimeout(() => {
+      sidebar.classList.remove('notransition');
+      content.classList.remove('notransition');
+    }, 500);
+  }
 });
