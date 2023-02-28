@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin UI | Dashboard</title>
+  </head>
+  <body>
+    <!-- Search Modal Definition -->
+    <div class="modal fade" id="searchForm" tabindex="-1" aria-labelledby="searchFormLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="searchFormLabel">Search Wiki</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <input class="form-control" id="message-text"></input>
+              </div>
+            </form>
+            <div class="container-fluid">
+              <div class="row">Row1</div>
+              <div class="row">Row2</div>
+              <div class="row">Row3</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top Navigation Bar --> 
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <i class="bi bi-git"></i>
+          Admin UI
+        </a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="btn search-button btn-primary" data-bs-toggle="modal" data-bs-target="#searchForm">
+              <i class="bi bi-search"></i>
+            </button>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              <i class="bi bi-person-fill"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item">Action 1</a></li>
+              <li><a class="dropdown-item">Action 2</a></li>
+              <li><a class="dropdown-item">Action 3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Content Wrapper -->
+    <div class="d-flex flex-nowrap content-wrapper">
+      <!-- SideBar -->
+      <div class="sidebar bg-light sidebar-collapse">
+        <ul class="nav nav-pills nav-flush flex-column mb-auto">
+          <li class="nav-item dropdown dropend hover border-bottom">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownProduct" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="nav-logo bi bi-list-columns"></i>
+              <span class="nav-text">SubMenu</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownProduct" style="">
+              <li><a class="dropdown-item">Menu 1</a></li>
+              <li><a class="dropdown-item">Menu 2</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item">Break</a></li>
+            </ul>
+          </li>
+          <li class="nav-item border-bottom">
+            <a class="nav-link" href="#">
+              <i class="nav-logo bi bi-link"></i>
+              <span class="nav-text">Link</span>
+            </a>
+          </li>
+          <li class="nav-item border-bottom">
+            <a class="nav-link" href="#" id="sidebarCollapse">
+              <i class="nav-logo bi bi-arrow-left-circle-fill"></i>
+              <span class="nav-text">Collapse</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Page Content -->
+      <div class="content container-fluid flex-column p-2 d-flex align-items-center" style="background-color: lightgrey">
+        <div class="bubble p-2">
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+          <h1>This is a Test!</h1>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/ts/main.ts"></script>
+  </body>
+</html>

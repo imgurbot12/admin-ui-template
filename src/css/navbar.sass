@@ -1,0 +1,15 @@
+
+// allow collapsed widgets to remain on far-right until colapse happens
+@media (min-width: 992px) 
+  .navbar-collapse
+    flex: none
+
+.fixed-top
+  // ensure nav-items don't become columns
+  ul.navbar-nav
+    flex-direction: initial
+  // abolute position dropdown items
+  .dropdown-menu
+    position: absolute
+
+

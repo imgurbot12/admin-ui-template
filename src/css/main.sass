@@ -1,0 +1,32 @@
+@import "./bootstrap.sass"
+@import "./navbar.sass"
+@import "./sidebar.sass"
+
+$navbar-margin-top: 3.5rem
+
+html, body
+  margin:     0px
+  min-height: 90%
+
+// sidebar content wrapper and dashboard layout
+.content-wrapper
+  height:     90%
+  display:    flex
+  margin:     0px
+  margin-top: $navbar-margin-top
+
+  .sidebar
+    top:      $navbar-margin-top
+    left:     0
+    position: fixed
+  
+  .content
+    margin-left: 0px
+    transition:  margin $sb-anim-time
+
+    .bubble
+      margin: 3rem
+      width:  75%
+      height: -webkit-fill-available
+      background-color: white
+

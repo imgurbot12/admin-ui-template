@@ -1,0 +1,81 @@
+
+$sb-anim-time: 0.30s
+
+$sb-width:           8rem
+$sb-width-collapse:  3.5rem
+
+$sb-font-size:          1rem
+$sb-font-entry-size:    1rem
+$sb-collapse-font-size: 1.2rem
+
+@keyframes anim-slide-width
+  0%
+    width: 0%
+  70%
+    width: 80%
+  100%
+    width: 100%
+
+// sidebar extended (default state)
+.sidebar
+  width:      $sb-width
+  height:     100%
+  z-index:    3
+  transition: all $sb-anim-time ease-in-out
+
+  // navigation behavior overrides
+  .nav-logo
+    font-size:  $sb-font-size
+    transition: all $sb-anim-time ease-out
+  
+  .nav-link
+    width:       100%
+    display:     flex
+    align-items: center
+  
+  .nav-text
+    font-size:        $sb-font-entry-size
+    position:         relative
+    margin-left:      5px
+    white-space:      nowrap
+    overflow-x:       hidden
+    animation:        anim-slide-width $sb-anim-time ease-in-out
+    
+  // custom dropdown menu settings
+  .dropend
+    .hover-active
+      inset:    0px auto auto 0px
+      margin:   0px
+      position: absolute
+    .dropdown-toggle::after
+      display: none
+    .dropdown-toggle::focus-visible
+      outline: none
+
+// hidden sidebar (toggled away altogether)
+.sidebar-hide
+  transform:  translateX(-100%)
+  transition: all $sb-anim-time
+
+// toggle away sidebar on tiny screens
+@media (max-width: 768px)
+  .sidebar
+    transform:  translateX(-100%)
+    transition: all $sb-anim-time
+
+// collapsed sidebar (codensed to only icons)
+.sidebar-collapse
+  width: $sb-width-collapse
+  
+  // hide text content to leave only logo content
+  .nav-text
+    display: none
+
+  // transition font-size (for icons)
+  .nav-logo
+    font-size:  $sb-collapse-font-size
+    transition: all $sb-anim-time ease-out
+
+  // rotate collapse menu-item
+  #sidebarCollapse .nav-logo
+    transform: rotate(180deg)
